@@ -12,4 +12,9 @@ public interface ClaimService {
 
     Claim getClaim(Long id);
 
+    Claim assignVolunteer(Long claimId, Long volunteerId);
+
+    Claim markPickedUp(Long claimId);
+
+    Claim markDelivered(Long claimId);
 }

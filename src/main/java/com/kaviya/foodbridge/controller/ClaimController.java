@@ -36,4 +36,26 @@ public class ClaimController {
         return claimService.getClaim(id);
 
     }
+
+    @PutMapping("/{claimId}/assign/{volunteerId}")
+    public Claim assignVolunteer(@PathVariable Long claimId,
+                                 @PathVariable Long volunteerId){
+
+        return claimService.assignVolunteer(claimId,volunteerId);
+
+    }
+
+    @PutMapping("/{claimId}/pickup")
+    public Claim pickup(@PathVariable Long claimId){
+
+        return claimService.markPickedUp(claimId);
+
+    }
+
+    @PutMapping("/{claimId}/deliver")
+    public Claim deliver(@PathVariable Long claimId){
+
+        return claimService.markDelivered(claimId);
+
+    }
 }

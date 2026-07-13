@@ -23,6 +23,11 @@ public class DonationController {
         return donationService.createDonation(request);
     }
 
+    @GetMapping
+    public List<Donation> getAllDonations() {
+        return donationService.getAllDonations();
+    }
+
     @GetMapping("/available")
     public List<Donation> getAvailableDonations() {
         return donationService.getAvailableDonations();

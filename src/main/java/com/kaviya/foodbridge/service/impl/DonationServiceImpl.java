@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-public abstract class DonationServiceImpl implements DonationService {
+public class DonationServiceImpl implements DonationService {
 
     private final DonationRepository donationRepository;
 
@@ -36,7 +36,11 @@ public abstract class DonationServiceImpl implements DonationService {
     }
 
     @Override
-    public List<Donation> getAvailableDonations() {
+    public List<Donation> getAllDonations() {
+        return donationRepository.findAll();
+    }
+
+    @Override public List<Donation> getAvailableDonations() {
         return donationRepository.findByStatus(DonationStatus.AVAILABLE);
     }
 
