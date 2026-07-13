@@ -23,8 +23,32 @@ public class DonationController {
         return donationService.createDonation(request);
     }
 
-    @GetMapping
-    public List<Donation> getAllDonations() {
-        return donationService.getAllDonations();
+    @GetMapping("/available")
+    public List<Donation> getAvailableDonations() {
+        return donationService.getAvailableDonations();
+    }
+
+    @GetMapping("/{id}")
+    public Donation getDonation(@PathVariable Long id){
+
+        return donationService.getDonation(id);
+
+    }
+
+    @PutMapping("/{id}")
+    public Donation updateDonation(@PathVariable Long id,
+                                   @RequestBody DonationRequest request){
+
+        return donationService.updateDonation(id,request);
+
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteDonation(@PathVariable Long id){
+
+        donationService.deleteDonation(id);
+
+        return "Donation Deleted Successfully";
+
     }
 }

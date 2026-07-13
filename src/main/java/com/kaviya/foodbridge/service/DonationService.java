@@ -11,4 +11,12 @@ public interface DonationService {
 
     List<Donation> getAllDonations();
 
+    List<Donation> getAvailableDonations();
+
+    Donation getDonation(Long id);
+
+    Donation updateDonation(Long id, DonationRequest request);
+
+    void deleteDonation(Long id);
+
 }

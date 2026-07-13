@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-public class DonationServiceImpl implements DonationService {
+public abstract class DonationServiceImpl implements DonationService {
 
     private final DonationRepository donationRepository;
 
@@ -36,7 +36,42 @@ public class DonationServiceImpl implements DonationService {
     }
 
     @Override
-    public List<Donation> getAllDonations() {
-        return donationRepository.findAll();
+    public List<Donation> getAvailableDonations() {
+        return donationRepository.findByStatus(DonationStatus.AVAILABLE);
+    }
+
+    @Override
+    public Donation getDonation(Long id){
+
+        return donationRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Donation not found"));
+
+    }
+
+    @Override
+    public Donation updateDonation(Long id,
+                                   DonationRequest request){
+
+        Donation donation = donationRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Donation not found"));
+
+        donation.setFoodName(request.getFoodName());
+        donation.setQuantity(request.getQuantity());
+        donation.setDescription(request.getDescription());
+        donation.setExpiryTime(request.getExpiryTime());
+        donation.setPickupAddress(request.getPickupAddress());
+
+        return donationRepository.save(donation);
+
+    }
+
+    @Override
+    public void deleteDonation(Long id){
+
+        Donation donation = donationRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Donation not found"));
+
+        donationRepository.delete(donation);
+
     }
 }

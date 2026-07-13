@@ -5,6 +5,8 @@ import com.kaviya.foodbridge.entity.User;
 import com.kaviya.foodbridge.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
+import com.kaviya.foodbridge.dto.LoginRequest;
+import com.kaviya.foodbridge.dto.LoginResponse;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -27,5 +29,10 @@ public class AuthController {
         System.out.println("Register API called");
         return userService.register(request);
 
+    }
+
+    @PostMapping("/login")
+    public LoginResponse login(@RequestBody LoginRequest request) {
+        return userService.login(request);
     }
 }
