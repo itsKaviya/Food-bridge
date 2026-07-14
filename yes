@@ -1,0 +1,28 @@
+[33mcommit 42eba7b63d0c7cde9285bb53b15630b92b933253[m
+Author: Kaviya Srinivasan <kaviyasrini0221@gmail.com>
+Date:   Tue Jul 14 00:55:51 2026 +0530
+
+    Complete FoodBridge full-stack application
+
+ pom.xml                                            |   6 [32m+[m
+ .../foodbridge/controller/HomeController.java      |  13 [31m-[m
+ .../foodbridge/controller/PageController.java      |  43 [32m++[m
+ src/main/resources/static/css/style.css            | 507 [32m+++++++++++++++++++++[m
+ src/main/resources/static/js/add-donation.js       |  57 [32m+++[m
+ src/main/resources/static/js/admin.js              | 138 [32m++++++[m
+ src/main/resources/static/js/claim.js              | 151 [32m++++++[m
+ src/main/resources/static/js/common.js             |  45 [32m++[m
+ src/main/resources/static/js/dashboard.js          |  81 [32m++++[m
+ src/main/resources/static/js/donation.js           | 147 [32m++++++[m
+ src/main/resources/static/js/login.js              |  49 [32m++[m
+ src/main/resources/static/js/register.js           |  65 [32m+++[m
+ src/main/resources/templates/add-donation.html     | 191 [32m++++++++[m
+ src/main/resources/templates/admin.html            | 197 [32m++++++++[m
+ src/main/resources/templates/claims.html           |  94 [32m++++[m
+ src/main/resources/templates/dashboard.html        | 168 [32m+++++++[m
+ src/main/resources/templates/donations.html        | 118 [32m+++++[m
+ src/main/resources/templates/fragments/footer.html |  44 [32m++[m
+ src/main/resources/templates/fragments/navbar.html | 114 [32m+++++[m
+ src/main/resources/templates/login.html            | 129 [32m++++++[m
+ src/main/resources/templates/register.html         | 160 [32m+++++++[m
+ 21 files changed, 2504 insertions(+), 13 deletions(-)
