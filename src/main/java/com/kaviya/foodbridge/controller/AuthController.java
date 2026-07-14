@@ -1,4 +1,4 @@
-timepackage com.kaviya.foodbridge.controller;
+package com.kaviya.foodbridge.controller;
 
 import com.kaviya.foodbridge.dto.RegisterRequest;
 import com.kaviya.foodbridge.entity.User;
