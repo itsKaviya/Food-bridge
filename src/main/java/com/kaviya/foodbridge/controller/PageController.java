@@ -36,13 +36,13 @@ public class PageController {
         return "donations";
     }
 
-    @GetMapping("/admin")
-    public String admin(){
-        return "admin";
+    @GetMapping("/claims")
+    public String claims() {
+        return "claims";
     }
 
-    @GetMapping("/claims")
-    public String claims(){
-        return "calims";
+    @GetMapping("/admin")
+    public String admin() {
+        return "admin";
     }
 }
